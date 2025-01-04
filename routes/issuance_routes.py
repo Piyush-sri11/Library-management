@@ -44,10 +44,11 @@ def return_book(issue_id):
     if not issue or issue.status == 'returned':
         return jsonify({"message": "Invalid issue record"}), 400
 
-    issue.actual_return_date = datetime.utcnow()
+    issue.actual_return_date = datetime.now()
     book = Book.query.get(issue.book_id)
     if issue.actual_return_date.date() > issue.return_date:
-        late_days = (issue.actual_return_date - issue.return_date).days
+        return_date_time = datetime.combine(issue.return_date, datetime.min.time())
+        late_days = (issue.actual_return_date - return_date_time).days
         issue.late_fine = late_days * book.late_fee
 
     issue.status = 'returned'

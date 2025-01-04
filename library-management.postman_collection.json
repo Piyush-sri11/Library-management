@@ -1,0 +1,1828 @@
+{
+	"info": {
+		"_postman_id": "a99533bc-ebb1-419d-b8ab-12d72c68d1bf",
+		"name": "library-management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38345023"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:5000/users/register",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"lenna@gmail.com\",\r\n    \"first_name\":\"Lenna\",\r\n    \"last_name\":\"Dave\",\r\n    \"phone_number\":\"9523678524\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/users/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/users/register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"lenna@gmail.com\",\r\n    \"first_name\":\"Lenna\",\r\n    \"last_name\":\"Dave\",\r\n    \"phone_number\":\"9523678524\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/users/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:13:44 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User registered successfully!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/users/login",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"lenna@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/users/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/users/login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"lenna@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/users/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:15:11 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "341",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczNjAyODkxMSwianRpIjoiYzFmNjU5ZjctNmE3ZC00MzI5LThmNjItMzdmZTE5ZmM1ZDQ3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NCwibmJmIjoxNzM2MDI4OTExLCJjc3JmIjoiMTUyYjQ1N2MtNWFkNC00YTZkLWI0OTQtNmUzZTdiNDM1ODA2IiwiZXhwIjoxNzM2MDI5ODExfQ._E2b0P4Z9nT89SZnPq0p325leBPB_Ll4R3FnHFIyBMo\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/books/",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/books/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"books",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/books/",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/books/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:16:27 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "648",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"books\": [\n        {\n            \"author\": \"Chetan Bhagat\",\n            \"book_id\": 1,\n            \"genre\": \"Love\",\n            \"late_fee\": 100,\n            \"quantity\": 10,\n            \"title\": \"Half Girlfriend\"\n        },\n        {\n            \"author\": \"George RR Martin\",\n            \"book_id\": 2,\n            \"genre\": \"Fiction\",\n            \"late_fee\": 200,\n            \"quantity\": 15,\n            \"title\": \"Game of thrones\"\n        },\n        {\n            \"author\": \"George RR Martin\",\n            \"book_id\": 3,\n            \"genre\": \"Fiction\",\n            \"late_fee\": 200,\n            \"quantity\": 15,\n            \"title\": \"Dance of Dragons\"\n        }\n    ],\n    \"pagination\": {\n        \"current_page\": 1,\n        \"per_page\": 3,\n        \"total_items\": 6,\n        \"total_pages\": 2\n    }\n}"
+				},
+				{
+					"name": "http://127.0.0.1:5000/books/",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/books/?page=2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:17:19 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "655",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"books\": [\n        {\n            \"author\": \"Anonymous\",\n            \"book_id\": 4,\n            \"genre\": \"Philosphy\",\n            \"late_fee\": 150,\n            \"quantity\": 15,\n            \"title\": \"Rich dad, Poor dad\"\n        },\n        {\n            \"author\": \"Chetan Bhagat\",\n            \"book_id\": 5,\n            \"genre\": \"Love\",\n            \"late_fee\": 50,\n            \"quantity\": 15,\n            \"title\": \"One night @ call centre\"\n        },\n        {\n            \"author\": \"APJ Abdul kalam\",\n            \"book_id\": 6,\n            \"genre\": \"Autobiograpgy\",\n            \"late_fee\": 100,\n            \"quantity\": 15,\n            \"title\": \"Rings of Fire\"\n        }\n    ],\n    \"pagination\": {\n        \"current_page\": 2,\n        \"per_page\": 3,\n        \"total_items\": 6,\n        \"total_pages\": 2\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/books/?page=2",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/books/?page=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"books",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/books/?page=2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/books/?page=2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:19:52 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "655",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"books\": [\n        {\n            \"author\": \"Anonymous\",\n            \"book_id\": 4,\n            \"genre\": \"Philosphy\",\n            \"late_fee\": 150,\n            \"quantity\": 15,\n            \"title\": \"Rich dad, Poor dad\"\n        },\n        {\n            \"author\": \"Chetan Bhagat\",\n            \"book_id\": 5,\n            \"genre\": \"Love\",\n            \"late_fee\": 50,\n            \"quantity\": 15,\n            \"title\": \"One night @ call centre\"\n        },\n        {\n            \"author\": \"APJ Abdul kalam\",\n            \"book_id\": 6,\n            \"genre\": \"Autobiograpgy\",\n            \"late_fee\": 100,\n            \"quantity\": 15,\n            \"title\": \"Rings of Fire\"\n        }\n    ],\n    \"pagination\": {\n        \"current_page\": 2,\n        \"per_page\": 3,\n        \"total_items\": 6,\n        \"total_pages\": 2\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/books/",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"The Snowball: Warren Buffett and the Business of Life\",\r\n    \"author\":\"Alice Schroeder\",\r\n    \"genre\":\"Biography\",\r\n    \"quantity\":20,\r\n    \"late_fee\":100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/books/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"books",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/books/",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"The Snowball: Warren Buffett and the Business of Life\",\r\n    \"author\":\"Alice Schroeder\",\r\n    \"genre\":\"Biography\",\r\n    \"quantity\":20,\r\n    \"late_fee\":100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/books/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:23:01 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "181",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"author\": \"Alice Schroeder\",\n    \"book_id\": 7,\n    \"genre\": \"Biography\",\n    \"late_fee\": 100,\n    \"quantity\": 20,\n    \"title\": \"The Snowball: Warren Buffett and the Business of Life\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/books/7",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"late_fee\":175\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/books/7",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"books",
+						"7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/books/7",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"late_fee\":175\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/books/7",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								"7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:24:24 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "181",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"author\": \"Alice Schroeder\",\n    \"book_id\": 7,\n    \"genre\": \"Biography\",\n    \"late_fee\": 175,\n    \"quantity\": 20,\n    \"title\": \"The Snowball: Warren Buffett and the Business of Life\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/books/7",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/books/7",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"books",
+						"7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/books/7",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/books/7",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								"7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:25:16 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Book deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/books/6",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/books/6",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"books",
+						"6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/books/6",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/books/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								"6"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:26:00 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "145",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"author\": \"APJ Abdul kalam\",\n    \"book_id\": 6,\n    \"genre\": \"Autobiograpgy\",\n    \"late_fee\": 100,\n    \"quantity\": 15,\n    \"title\": \"Rings of Fire\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/books/search?q=george",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/books/search?q=george",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"books",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "george"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/books/search?q=george",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/books/search?q=george",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"books",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "george"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:31:59 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "479",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"books\": [\n        {\n            \"author\": \"George RR Martin\",\n            \"book_id\": 2,\n            \"genre\": \"Fiction\",\n            \"late_fee\": 200,\n            \"quantity\": 15,\n            \"title\": \"Game of thrones\"\n        },\n        {\n            \"author\": \"George RR Martin\",\n            \"book_id\": 3,\n            \"genre\": \"Fiction\",\n            \"late_fee\": 200,\n            \"quantity\": 15,\n            \"title\": \"Dance of Dragons\"\n        }\n    ],\n    \"pagination\": {\n        \"current_page\": 1,\n        \"per_page\": 3,\n        \"total_items\": 2,\n        \"total_pages\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/issuances/issue",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"book_id\": 3,\r\n    \"user_id\":2,\r\n    \"issue_date\":\"2025-01-02\",\r\n    \"return_date\":\"2025-01-07\",\r\n    \"status\":\"issued\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/issuances/issue",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"issuances",
+						"issue"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/issuances/issue",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book_id\": 3,\r\n    \"user_id\":2,\r\n    \"issue_date\":\"2025-01-02\",\r\n    \"return_date\":\"2025-01-07\",\r\n    \"status\":\"issued\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/issuances/issue",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"issuances",
+								"issue"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:36:11 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"actual_return_date\": null,\n    \"book_id\": 3,\n    \"issue_date\": \"2025-01-02\",\n    \"issue_id\": 1,\n    \"late_fine\": 0,\n    \"return_date\": \"2025-01-07\",\n    \"status\": \"issued\",\n    \"user_id\": 2\n}"
+				},
+				{
+					"name": "http://127.0.0.1:5000/issuances/issue",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book_id\": 5,\r\n    \"user_id\":1,\r\n    \"issue_date\":\"2025-01-05\",\r\n    \"return_date\":\"2025-01-10\"\r\n    // \"status\":\"issued\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/issuances/issue",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"issuances",
+								"issue"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:37:33 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": [\n        \"Missing data for required field.\"\n    ]\n}"
+				},
+				{
+					"name": "http://127.0.0.1:5000/issuances/issue",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book_id\": 5,\r\n    \"user_id\":1,\r\n    \"issue_date\":\"2025-01-05\",\r\n    \"return_date\":\"2025-01-02\",\r\n    \"status\":\"issued\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/issuances/issue",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"issuances",
+								"issue"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:37:59 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Return date must be after issue date\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/issuances/",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/issuances/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"issuances",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/issuances/",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/issuances/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"issuances",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:38:59 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "807",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"issues\": [\n        {\n            \"actual_return_date\": null,\n            \"book_id\": 3,\n            \"issue_date\": \"2025-01-02\",\n            \"issue_id\": 1,\n            \"late_fine\": 0,\n            \"return_date\": \"2025-01-07\",\n            \"status\": \"issued\",\n            \"user_id\": 2\n        },\n        {\n            \"actual_return_date\": null,\n            \"book_id\": 6,\n            \"issue_date\": \"2025-01-02\",\n            \"issue_id\": 2,\n            \"late_fine\": 0,\n            \"return_date\": \"2025-01-04\",\n            \"status\": \"issued\",\n            \"user_id\": 1\n        },\n        {\n            \"actual_return_date\": null,\n            \"book_id\": 5,\n            \"issue_date\": \"2025-01-05\",\n            \"issue_id\": 3,\n            \"late_fine\": 0,\n            \"return_date\": \"2025-01-10\",\n            \"status\": \"issued\",\n            \"user_id\": 3\n        }\n    ],\n    \"pagination\": {\n        \"current_page\": 1,\n        \"per_page\": 3,\n        \"total_items\": 3,\n        \"total_pages\": 1\n    }\n}"
+				},
+				{
+					"name": "http://127.0.0.1:5000/issuances/",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/issuances/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"issuances",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:42:29 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "807",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"issues\": [\n        {\n            \"actual_return_date\": null,\n            \"book_id\": 3,\n            \"issue_date\": \"2025-01-02\",\n            \"issue_id\": 1,\n            \"late_fine\": 0,\n            \"return_date\": \"2025-01-07\",\n            \"status\": \"issued\",\n            \"user_id\": 2\n        },\n        {\n            \"actual_return_date\": null,\n            \"book_id\": 6,\n            \"issue_date\": \"2025-01-02\",\n            \"issue_id\": 2,\n            \"late_fine\": 0,\n            \"return_date\": \"2025-01-04\",\n            \"status\": \"issued\",\n            \"user_id\": 1\n        },\n        {\n            \"actual_return_date\": null,\n            \"book_id\": 5,\n            \"issue_date\": \"2025-01-05\",\n            \"issue_id\": 3,\n            \"late_fine\": 0,\n            \"return_date\": \"2025-01-10\",\n            \"status\": \"issued\",\n            \"user_id\": 3\n        }\n    ],\n    \"pagination\": {\n        \"current_page\": 1,\n        \"per_page\": 3,\n        \"total_items\": 4,\n        \"total_pages\": 2\n    }\n}"
+				},
+				{
+					"name": "http://127.0.0.1:5000/issuances/",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/issuances/?page=2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"issuances",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:42:58 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "355",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"issues\": [\n        {\n            \"actual_return_date\": null,\n            \"book_id\": 2,\n            \"issue_date\": \"2025-01-05\",\n            \"issue_id\": 4,\n            \"late_fine\": 0,\n            \"return_date\": \"2025-01-10\",\n            \"status\": \"issued\",\n            \"user_id\": 3\n        }\n    ],\n    \"pagination\": {\n        \"current_page\": 2,\n        \"per_page\": 3,\n        \"total_items\": 4,\n        \"total_pages\": 2\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/issuances/return/6",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/issuances/return/6",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"issuances",
+						"return",
+						"6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/issuances/return/6",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/issuances/return/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"issuances",
+								"return",
+								"6"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:48:42 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "197",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"actual_return_date\": \"2025-01-05\",\n    \"book_id\": 3,\n    \"issue_date\": \"2025-01-02\",\n    \"issue_id\": 6,\n    \"late_fine\": 200,\n    \"return_date\": \"2025-01-04\",\n    \"status\": \"returned\",\n    \"user_id\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/issuances/extend/1",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"return_date\":\"2025-01-05\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/issuances/extend/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"issuances",
+						"extend",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/issuances/extend/1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"return_date\":\"2025-01-05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/issuances/extend/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"issuances",
+								"extend",
+								"1"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:50:40 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"New return date must be after the current return date\"\n}"
+				},
+				{
+					"name": "http://127.0.0.1:5000/issuances/extend/1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"return_date\":\"2025-01-10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/issuances/extend/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"issuances",
+								"extend",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:51:00 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"actual_return_date\": null,\n    \"book_id\": 3,\n    \"issue_date\": \"2025-01-02\",\n    \"issue_id\": 1,\n    \"late_fine\": 0,\n    \"return_date\": \"2025-01-10\",\n    \"status\": \"issued\",\n    \"user_id\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/issuances/book/3",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/issuances/book/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"issuances",
+						"book",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/issuances/book/3",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/issuances/book/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"issuances",
+								"book",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:52:35 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "824",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"book_issues\": [\n        {\n            \"actual_return_date\": null,\n            \"book_id\": 3,\n            \"issue_date\": \"2025-01-02\",\n            \"issue_id\": 1,\n            \"late_fine\": 0,\n            \"return_date\": \"2025-01-10\",\n            \"status\": \"issued\",\n            \"user_id\": 2\n        },\n        {\n            \"actual_return_date\": null,\n            \"book_id\": 3,\n            \"issue_date\": \"2025-01-02\",\n            \"issue_id\": 5,\n            \"late_fine\": 0,\n            \"return_date\": \"2025-01-07\",\n            \"status\": \"issued\",\n            \"user_id\": 2\n        },\n        {\n            \"actual_return_date\": \"2025-01-05\",\n            \"book_id\": 3,\n            \"issue_date\": \"2025-01-02\",\n            \"issue_id\": 6,\n            \"late_fine\": 200,\n            \"return_date\": \"2025-01-04\",\n            \"status\": \"returned\",\n            \"user_id\": 2\n        }\n    ],\n    \"pagination\": {\n        \"current_page\": 1,\n        \"per_page\": 3,\n        \"total_items\": 3,\n        \"total_pages\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/issuances/user/1",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/issuances/user/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"issuances",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/issuances/user/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/issuances/user/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"issuances",
+								"user",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:53:23 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "370",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"pagination\": {\n        \"current_page\": 1,\n        \"per_page\": 3,\n        \"total_items\": 1,\n        \"total_pages\": 1\n    },\n    \"user_issues\": [\n        {\n            \"actual_return_date\": \"2025-01-04\",\n            \"book_id\": 6,\n            \"issue_date\": \"2025-01-02\",\n            \"issue_id\": 2,\n            \"late_fine\": 0,\n            \"return_date\": \"2025-01-04\",\n            \"status\": \"returned\",\n            \"user_id\": 1\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:5000/issuances/1",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/issuances/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"issuances",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:5000/issuances/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/issuances/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"issuances",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.7",
+							"type": "text"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Jan 2025 22:54:22 GMT",
+							"type": "text"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "close",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"actual_return_date\": null,\n    \"book_id\": 3,\n    \"issue_date\": \"2025-01-02\",\n    \"issue_id\": 1,\n    \"late_fine\": 0,\n    \"return_date\": \"2025-01-10\",\n    \"status\": \"issued\",\n    \"user_id\": 2\n}"
+				}
+			]
+		}
+	]
+}
