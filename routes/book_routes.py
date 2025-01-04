@@ -53,8 +53,29 @@ def delete_book(book_id):
 
 @book_blueprint.route('/', methods=['GET'])
 def get_books():
-    books = Book.query.all()
-    return jsonify(books_schema.dump(books)), 200
+    page= request.args.get('page', default=1, type=int)
+    per_page = request.args.get('per_page', default=3, type=int)
+    pagination = Book.query.paginate(page=page, per_page=per_page)
+
+    books = pagination.items
+    total = pagination.total
+    pages = pagination.pages
+    current_page = pagination.page
+
+    if not books:
+        return jsonify({"message": "No books found matching the query"}), 404
+
+    # Return paginated results
+    return jsonify({
+        "books": books_schema.dump(books),
+        "pagination": {
+            "total_items": total,
+            "total_pages": pages,
+            "current_page": current_page,
+            "per_page": per_page
+        }
+    }), 200
+
 
 @book_blueprint.route('/<int:book_id>', methods=['GET'])
 def get_book(book_id):
@@ -69,15 +90,36 @@ def search_books():
     if not query:
         return jsonify({"message": "Search query cannot be empty"}), 400
 
-    # Perform case-insensitive search on title or author
-    books = Book.query.filter(
+    # Perform case-insensitive search on title or author also apply pagination
+    
+    # Get pagination parameters from the query string
+    page = request.args.get('page', 1, type=int)  # Default page is 1
+    per_page = request.args.get('per_page', 3, type=int)  # Default items per page is 10
+
+    # Perform case-insensitive search on title or author and apply pagination
+    pagination = Book.query.filter(
         (Book.title.ilike(f"%{query}%")) | (Book.author.ilike(f"%{query}%"))
-    ).all()
+    ).paginate(page=page, per_page=per_page, error_out=False)
+
+    # Retrieve items and pagination details
+    books = pagination.items
+    total = pagination.total
+    pages = pagination.pages
+    current_page = pagination.page
 
     if not books:
         return jsonify({"message": "No books found matching the query"}), 404
 
-    return jsonify(books_schema.dump(books)), 200
+    # Return paginated results
+    return jsonify({
+        "books": books_schema.dump(books),
+        "pagination": {
+            "total_items": total,
+            "total_pages": pages,
+            "current_page": current_page,
+            "per_page": per_page
+        }
+    }), 200
 
 @book_blueprint.route('/<int:book_id>', methods=['PATCH'])
 # @jwt_required()

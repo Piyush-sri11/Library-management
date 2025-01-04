@@ -76,20 +76,83 @@ def extend_return(issue_id):
 @issuance_blueprint.route('/overdue', methods=['GET'])
 # @jwt_required()   
 def get_overdue_issues():
-    overdue_issues = Issue.query.filter(Issue.return_date < datetime.utcnow(), Issue.status == 'issued').all()
-    return jsonify(issues_schema.dump(overdue_issues)), 200
+    page= request.args.get('page', default=1, type=int)
+    per_page = request.args.get('per_page', default=3, type=int)
+    paginations = Issue.query.filter(Issue.return_date < datetime.utcnow(), Issue.status == 'issued').paginate(page=page, per_page=per_page)
+    overdue_issues = paginations.items
+    total = paginations.total
+    pages = paginations.pages
+    current_page = paginations.page
+    per_page = paginations.per_page
+
+    if not overdue_issues:
+        return jsonify({"message": "No overdue issue records found"}), 404
+
+    return jsonify(
+        {
+            "overdue_issues": issues_schema.dump(overdue_issues),
+            "pagination": {
+                "total_items": total,
+                "total_pages": pages,
+                "current_page": current_page,
+                "per_page": per_page
+            }   
+        }
+    ), 200
 
 @issuance_blueprint.route('/user/<int:user_id>', methods=['GET'])
 # @jwt_required()
 def get_user_issues(user_id):
-    user_issues = Issue.query.filter_by(user_id=user_id).all()
-    return jsonify(issues_schema.dump(user_issues)), 200
+    page= request.args.get('page', default=1, type=int)
+    per_page = request.args.get('per_page', default=3, type=int)
+    paginations = Issue.query.filter_by(user_id=user_id).paginate(page=page, per_page=per_page)
+    user_issues = paginations.items
+    total = paginations.total
+    pages = paginations.pages
+    current_page = paginations.page
+    per_page = paginations.per_page
+
+    if not user_issues:
+        return jsonify({"message": "No issue records found for the user"}), 404
+    
+    return jsonify(
+        {
+            "user_issues": issues_schema.dump(user_issues),
+            "pagination": {
+                "total_items": total,
+                "total_pages": pages,
+                "current_page": current_page,
+                "per_page": per_page
+            }  
+        }
+    ), 200
 
 @issuance_blueprint.route('/book/<int:book_id>', methods=['GET'])
 # @jwt_required()
 def get_book_issues(book_id):
-    book_issues = Issue.query.filter_by(book_id=book_id).all()
-    return jsonify(issues_schema.dump(book_issues)), 200
+    page= request.args.get('page', default=1, type=int)
+    per_page = request.args.get('per_page', default=3, type=int)
+    paginations = Issue.query.filter_by(book_id=book_id).paginate(page=page, per_page=per_page)
+    book_issues = paginations.items
+    total = paginations.total
+    pages = paginations.pages
+    current_page = paginations.page
+    per_page = paginations.per_page
+
+    if not book_issues:
+        return jsonify({"message": "No issue records found for the book"}), 404
+    # book_issues = Issue.query.filter_by(book_id=book_id).all()
+    return jsonify(
+        {
+            "book_issues": issues_schema.dump(book_issues),
+            "pagination": {
+                "total_items": total,
+                "total_pages": pages,
+                "current_page": current_page,
+                "per_page": per_page
+            }
+        }
+    ), 200
 
 @issuance_blueprint.route('/<int:issue_id>', methods=['GET'])
 # @jwt_required()
@@ -102,5 +165,26 @@ def get_issue(issue_id):
 @issuance_blueprint.route('/', methods=['GET'])
 # @jwt_required()
 def get_issues():
-    issues = Issue.query.all()
-    return jsonify(issues_schema.dump(issues)), 200
+    page= request.args.get('page', default=1, type=int)
+    per_page = request.args.get('per_page', default=3, type=int)
+    paginations = Issue.query.paginate(page=page, per_page=per_page)
+    if not paginations.items:
+        return jsonify({"message": "No issue records found matching the query"}), 404
+    
+    issues = paginations.items
+    total = paginations.total
+    pages = paginations.pages
+    current_page = paginations.page
+    per_page = paginations.per_page
+
+    return jsonify(
+        {
+            "issues": issues_schema.dump(issues),
+            "pagination": {
+                "total_items": total,
+                "total_pages": pages,
+                "current_page": current_page,
+                "per_page": per_page
+            }
+        }
+    ), 200

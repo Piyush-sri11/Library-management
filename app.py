@@ -33,6 +33,13 @@ def update_overdue_issues():
             issue.status = 'overdue'
         db.session.commit()
 
+@app.cli.command('reset-db')
+def reset_db():
+    """Drops and recreates the database."""
+    db.drop_all()
+    db.create_all()
+    print("Database has been reset.")
+
 if __name__ == '__main__':
     scheduler = APScheduler()
     scheduler.init_app(app)
